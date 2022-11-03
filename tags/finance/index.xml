@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>finance on The Writer At Heart</title><link>https://japananh.github.io/tags/finance/</link><description>Recent content in finance on The Writer At Heart</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 27 Feb 2022 22:45:45 +0700</lastBuildDate><atom:link href="https://japananh.github.io/tags/finance/index.xml" rel="self" type="application/rss+xml"/><item><title>Summary of the book "What is blockchain?"</title><link>https://japananh.github.io/p/summary-of-the-book-what-is-blockchain/</link><pubDate>Sun, 27 Feb 2022 22:45:45 +0700</pubDate><guid>https://japananh.github.io/p/summary-of-the-book-what-is-blockchain/</guid><description>&lt;img src="https://japananh.github.io/p/summary-of-the-book-what-is-blockchain/cover.jpg" alt="Featured image of post Summary of the book "What is blockchain?"" />&lt;p>Here is my summary of the book &lt;a class="link" href="https://learning.oreilly.com/library/view/what-is-blockchain" target="_blank" rel="noopener"
+>What is blockchain?&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Blockchain principles
+&lt;ul>
+&lt;li>
+&lt;p>Start with the story of Changpeng Zhao - a blockchain billionaire in less than a year.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>He created &lt;strong>Binance&lt;/strong> in 2017 a flatform to transfer bitcoin and altcoins.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Network Effects&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;em>For every user who joins a blockchain, the more valuable that blockchain becomes.&lt;/em>&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&amp;hellip; networks that are more open are generally more successful.&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>The sweet spot between &lt;strong>permissioned&lt;/strong> and &lt;strong>permissionless.&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1645976339448/imSKEovqB.png"
+loading="lazy"
+alt="wibc_0113.png"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Eliminate the Intermediaries&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Story of apple juice supplement. The more middleman in the process, the more price customers will pay.&lt;/li>
+&lt;li>W&lt;em>here do we have inefficient intermediaries?&lt;/em> Who can we eliminate from our supply chain? “Going direct to the customer” has always been a way to save money for both producers and consumers.&lt;/li>
+&lt;li>&lt;em>where can we eliminate steps in our supply chain?&lt;/em> 
+Where can we replace a centralized record keeper with a decentralized ledger? Where can we eliminate an intermediary? That’s where a blockchain solution is often hiding.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>&lt;strong>Code, Not Contracts&lt;/strong>&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>A contract is paperwork that records a transaction between two or more parties.&lt;/li>
+&lt;li>A &lt;strong>smart contract&lt;/strong> is computer code that establishes agreements between parties and then executes the transaction when certain conditions are met, without the need for a third party.&lt;/li>
+&lt;li>Still don’t understand the idea of it???&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Forking bitcoin should be avoidable for 2 main reasons&lt;/p>
+&lt;ul>
+&lt;li>You lose users&lt;/li>
+&lt;li>You are more likely to fork again&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1645976462753/8Z3Q5vTqm.png"
+loading="lazy"
+alt="wibc_0119.png"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Four simple principles of a blockchain project: Free, Instant, Scalable, and Trusted.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The story of blockchain in 2017-2018 periods: &lt;strong>&lt;strong>Evolution vs Revolution&lt;/strong>&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
