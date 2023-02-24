@@ -164,6 +164,47 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// ...
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
+&lt;/div></description></item><item><title>Một vài lỗi tôi gặp phải với Go và Goland</title><link>https://japananh.github.io/p/mot-vai-loi-toi-gap-phai-voi-go-va-goland/</link><pubDate>Mon, 23 May 2022 09:00:03 +0700</pubDate><guid>https://japananh.github.io/p/mot-vai-loi-toi-gap-phai-voi-go-va-goland/</guid><description>&lt;img src="https://japananh.github.io/p/mot-vai-loi-toi-gap-phai-voi-go-va-goland/cover.jpg" alt="Featured image of post Một vài lỗi tôi gặp phải với Go và Goland" />&lt;p>Từ khi chuyển qua xài đồ của nhà Jetbrains (&lt;strong>Goland&lt;/strong>) thì tôi khá lúng túng trong việc dùng cái IDE vì nhiều chức năng hơn. Tuy nhiên, trải nghiệm code đúng là tuyệt vời hơn hẳn VSCode ở việc gợi ý syntax và auto import code.&lt;/p>
+&lt;p>Riêng extension &lt;code>vim&lt;/code> tôi chưa dùng nổi vì nhiều phím tắt trong Goland mình chưa thành thạo. Thêm vào đó, nhiều phím tắt cũng bị ghi đề khi dùng với &lt;code>vim&lt;/code> và việc phải config lại chúng và nhớ phím tắt mới khiến việc code trở nên rất khó chịu. Hi vọng trong thời gian tới tôi sẽ thành thạo Goland hơn.&lt;/p>
+&lt;p>Sau đây là một vài lỗi tôi đã từng gặp khi code Go bằng Goland. Hi vọng là chúng giúp ích cho bạn.&lt;/p>
+&lt;h2 id="how-to-fix-intellij-cannot-resolve-symbol">How to fix IntelliJ cannot resolve symbol&lt;/h2>
+&lt;p>Thi thoảng, tôi gặp trường hợp Goland bị làm sao đấy mà không tìm thấy được cái package được import vào ở từng file.&lt;/p>
+&lt;p>![Screen Shot 2022-05-22 at 11.50.23 AM.png](&lt;a class="link" href="https://cdn.hashnode.com/res/hashnode/image/upload/v1653238217374/7yjLLYgHc.png" target="_blank" rel="noopener"
+>https://cdn.hashnode.com/res/hashnode/image/upload/v1653238217374/7yjLLYgHc.png&lt;/a> align=&amp;ldquo;center&amp;rdquo;)&lt;/p>
+&lt;p>Cách tôi fix là chọn &lt;code>File Menu → Invalidate Caches / Restart&lt;/code>. Chờ một vài giây cho IDE restart lại thì lỗi sẽ được fix. Ngoài ra, nếu bạn vẫn còn gặp lỗi thì nên xem cái link &lt;a class="link" href="http://sbytestream.pythonanywhere.com/blog/How-to-fix-IntelliJ-cannot-resolve-symbol" target="_blank" rel="noopener"
+>này&lt;/a> để tham khảo các cách giải quyết khác.&lt;/p>
+&lt;h2 id="a-fatal-error-has-been-detected-by-the-java-runtime-environment">A fatal error has been detected by the Java Runtime Environment&lt;/h2>
+&lt;p>Tôi bị lỗi này sau khi cập nhật Goland lên phiên bản mới. Chạy một lúc là IDE bị dừng lại và restart rồi lại dừng và restart. Google ra thì mới biết là mặc định Goland dùng &lt;strong>JRE&lt;/strong> (Java runtime enviroment) làm JetBrains Runtime. Trường hợp của tôi theo như các issues trên Github chỉ thì do JetBrains Runtime bị lỗi nên cần đổi sang một JRE khác.&lt;/p>
+&lt;blockquote>
+&lt;p>As a Java application, IntelliJ IDEA requires a Java runtime environment (JRE). By default, IntelliJ IDEA uses &lt;a class="link" href="https://github.com/JetBrains/JetBrainsRuntime" target="_blank" rel="noopener"
+>JetBrains Runtime&lt;/a>
+ (a fork of &lt;a class="link" href="https://github.com/openjdk/jdk" target="_blank" rel="noopener"
+>OpenJDK&lt;/a>
+), which is included with the IDE. JetBrains Runtime fixes various known OpenJDK and Oracle JDK bugs, and provides better performance and stability. However, in some cases you may be required to use another Java runtime or a specific version of JetBrains Runtime.&lt;/p>
+&lt;/blockquote>
+&lt;p>Cách khắc phục là chọn JRE khác như hướng dẫn của JetBrains ở &lt;a class="link" href="https://www.jetbrains.com/help/idea/switching-boot-jdk.html" target="_blank" rel="noopener"
+>đây&lt;/a>. Chọn &lt;code>Help | Find Action&lt;/code> → &lt;code>Choose Boot Java Runtime for the IDE&lt;/code> -&amp;gt; &lt;code>OK&lt;/code>&lt;/p>
+&lt;h2 id="c-compiler-gcc-not-found-exec-gcc-executable-file-not-found-in-path">C compiler &amp;ldquo;gcc&amp;rdquo; not found: exec: &amp;ldquo;gcc&amp;rdquo;: executable file not found in $PATH&lt;/h2>
+&lt;p>Khi run test trong &lt;code>Dockerfile&lt;/code> với cú pháp &lt;code>RUN go test ./...&lt;/code>, có thể bạn sẽ gặp lỗi không tìm thấy package &lt;code>gcc&lt;/code>.&lt;/p>
+&lt;p>![Lỗi ko tìm thấy package &lt;code>gcc&lt;/code> khi chạy go test trong &lt;code>Dockerfile&lt;/code>.](&lt;a class="link" href="https://cdn.hashnode.com/res/hashnode/image/upload/v1653238321681/N3L89IVtY.png" target="_blank" rel="noopener"
+>https://cdn.hashnode.com/res/hashnode/image/upload/v1653238321681/N3L89IVtY.png&lt;/a> align=&amp;ldquo;center&amp;rdquo;)&lt;/p>
+&lt;p>Cách fix là &lt;a class="link" href="https://stackoverflow.com/questions/53479572/how-to-disable-cgo-for-running-tests" target="_blank" rel="noopener"
+>disable &lt;code>CGO&lt;/code>&lt;/a> (công cụ hỗ trợ các lời gọi hàm từ C trong Go, nhờ đó, ta có thể sử dụng Go để đưa thư viện động của C (C dynamic libraby) sang các ngôn ngữ khác.) thông qua việc thêm &lt;code>CGO_ENABLED=0&lt;/code>. Bên zalo có một seris bài rất hay về lập trình CGO, bạn có thể đọc để tham khảo thêm ở &lt;a class="link" href="https://zalopay-oss.github.io/go-advanced/ch2-cgo/" target="_blank" rel="noopener"
+>đây&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-Docker" data-lang="Docker">&lt;span class="line">&lt;span class="cl">&lt;span class="c">## before: C compiler &amp;#34;gcc&amp;#34; not found: exec: &amp;#34;gcc&amp;#34;: executable file not found in $PATH &lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">RUN&lt;/span> go &lt;span class="nb">test&lt;/span> -v ./....&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="c">## after: success&lt;/span>&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="err">&lt;/span>&lt;span class="k">RUN&lt;/span> &lt;span class="nv">CGO_ENABLED&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span> go &lt;span class="nb">test&lt;/span> -v ./...&lt;span class="err">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
 &lt;/div></description></item><item><title>Where to learn Go?</title><link>https://japananh.github.io/p/where-to-learn-go/</link><pubDate>Thu, 03 Feb 2022 21:49:28 +0700</pubDate><guid>https://japananh.github.io/p/where-to-learn-go/</guid><description>&lt;img src="https://japananh.github.io/p/where-to-learn-go/cover.jpg" alt="Featured image of post Where to learn Go?" />&lt;p>I started to learn Go last year. Go is one of the most popular programming languages and is the trend in recent years. Also, for a JavaScript-based developer like I, Go is considered an easier approach to learning a strong-typed language compared to C and Java.&lt;/p>
 &lt;p>This article is about my thoughts on some resources that I used to learn Go. Hope it helps you.&lt;/p>
 &lt;h2 id="go-tour-websites">Go tour websites&lt;/h2>
@@ -190,7 +231,309 @@
 >Go101&lt;/a> is definitely for you. They have quizzes, tricks, and great books. They also cover advanced topics such as Go optimizations.&lt;/p>
 &lt;h2 id="goexercises">GoExercises&lt;/h2>
 &lt;p>&lt;a class="link" href="https://gophercises.com/" target="_blank" rel="noopener"
->GoExercises&lt;/a> is another awesome website to practice Go concepts via mini-projects.&lt;/p></description></item><item><title>Generics in Go</title><link>https://japananh.github.io/p/generics-in-go/</link><pubDate>Fri, 24 Dec 2021 17:36:51 +0700</pubDate><guid>https://japananh.github.io/p/generics-in-go/</guid><description>&lt;img src="https://japananh.github.io/p/generics-in-go/cover.jpg" alt="Featured image of post Generics in Go" />&lt;p>Go team released Go 1.18 Beta 1 in December 2021, introducing support for generic programming using type parameters, a much-anticipated feature.&lt;/p>
+>GoExercises&lt;/a> is another awesome website to practice Go concepts via mini-projects.&lt;/p></description></item><item><title>Hàm init trong Go</title><link>https://japananh.github.io/p/ham-init-trong-go/</link><pubDate>Mon, 24 Jan 2022 09:08:51 +0700</pubDate><guid>https://japananh.github.io/p/ham-init-trong-go/</guid><description>&lt;img src="https://japananh.github.io/p/ham-init-trong-go/cover.jpg" alt="Featured image of post Hàm init trong Go" />&lt;p>Bài này ghi lại những thứ tôi hiểu về hàm init trong Go.&lt;/p>
+&lt;p>Khi tạo ứng dụng với ngôn ngữ Go, bạn cần khởi tạo biến cùng giá trị của chúng. Một trong những cách để làm điều này là khởi tạo chúng ở đầu hàm &lt;code>main()&lt;/code> hoặc khởi tạo chúng như biến global. Hàm &lt;code>init()&lt;/code> cho phép bạn chạy code trước hàm &lt;code>main()&lt;/code> và sau khi biến global được khởi tạo.&lt;/p>
+&lt;h2 id="concepts">Concepts&lt;/h2>
+&lt;p>Hàm &lt;code>init()&lt;/code> sẽ được gọi trước hàm &lt;code>main()&lt;/code> theo thứ tự như hình dưới.&lt;/p>
+&lt;p>&lt;img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1642044098355/G8Kuy4BXi.png"
+loading="lazy"
+alt="1_IXfNKuWDM_g1xijwpd254w.png"
+>&lt;/p>
+&lt;h2 id="requirements">Requirements&lt;/h2>
+&lt;p>Để chạy được phần code demo, bạn cần cài &lt;a class="link" href="https://go.dev/doc/install" target="_blank" rel="noopener"
+>Go&lt;/a> và &lt;a class="link" href="https://www.npmjs.com/package/nodemon" target="_blank" rel="noopener"
+>nodemon&lt;/a>. Bạn có thể chọn bất kỳ editor nào. Tôi dùng &lt;a class="link" href="https://code.visualstudio.com/download" target="_blank" rel="noopener"
+>Visual Studio Code&lt;/a>.&lt;/p>
+&lt;h2 id="demo">Demo&lt;/h2>
+&lt;ul>
+&lt;li>Hàm &lt;code>init()&lt;/code> chỉ chạy một lần.&lt;/li>
+&lt;li>Hàm &lt;code>init()&lt;/code> sẽ chạy sau khi biến global của package được khởi tạo và trước hàm &lt;code>main()&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;run main&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">init&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;init package main&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;x =&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">x&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">x&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="c1">// biến global
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">nodemon --exec go run main.go --signal SIGTERM
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">init package main
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">run main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>Hàm &lt;code>init()&lt;/code> bên trong package sẽ chạy khi import package bất kể bạn có sử dụng package này hay không.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">_&lt;/span> &lt;span class="s">&amp;#34;learn/internal/collections&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;run main&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">collections&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">init&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;init package collections&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;run main in collections&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">init package collections
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">run main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>Nếu có nhiều hàm &lt;code>init()&lt;/code> trong một file thì thứ tự chạy &lt;code>init()&lt;/code> sẽ từ trên xuống dưới.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">init&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;run init 1&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">init&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;run init 2&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;run main&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">run init &lt;span class="m">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">run init &lt;span class="m">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">run main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>Nếu có nhiều hàm &lt;code>init()&lt;/code> giữa các file trong một package, thứ tự chạy theo &lt;em>tên file tăng dần theo bảng chữ cái tiếng anh&lt;/em>.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">_&lt;/span> &lt;span class="s">&amp;#34;learn/pkg/collections&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">_&lt;/span> &lt;span class="s">&amp;#34;learn/pkg/rabbits&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">init&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;init package main&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;run main&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">collections&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">init&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;init package collections&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">rabbits&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">init&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;init package rabbits&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">init package collections
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">init package rabbits
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">init package main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="nhược-điểm">Nhược điểm&lt;/h2>
+&lt;p>Sau đây là một vài nhược điểm của việc dùng hàm &lt;code>init()&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>Làm chậm thời gian khởi động của ứng dụng.&lt;/li>
+&lt;li>Hàm &lt;code>init()&lt;/code> sẽ được gọi ngay khi bạn import package bất kể có cần hay không.&lt;/li>
+&lt;li>Nếu hàm &lt;code>init()&lt;/code> sửa giá trị của biến global, nó sẽ không được gọi khi chạy test.&lt;/li>
+&lt;/ul>
+&lt;h2 id="tài-liệu-tham-khảo">Tài liệu tham khảo&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://david-yappeter.medium.com/init-in-go-programming-31e2c2bc2371" target="_blank" rel="noopener"
+>https://david-yappeter.medium.com/init-in-go-programming-31e2c2bc2371&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://go.dev/doc/effective_go#init" target="_blank" rel="noopener"
+>https://go.dev/doc/effective_go#init&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Generics in Go</title><link>https://japananh.github.io/p/generics-in-go/</link><pubDate>Fri, 24 Dec 2021 17:36:51 +0700</pubDate><guid>https://japananh.github.io/p/generics-in-go/</guid><description>&lt;img src="https://japananh.github.io/p/generics-in-go/cover.jpg" alt="Featured image of post Generics in Go" />&lt;p>Go team released Go 1.18 Beta 1 in December 2021, introducing support for generic programming using type parameters, a much-anticipated feature.&lt;/p>
 &lt;p>Note: If you prefer, you can use the &lt;a class="link" href="https://go.dev/play/?v=gotip" target="_blank" rel="noopener"
 >Go playground in “Go dev branch” mode&lt;/a> to try new features with generics.&lt;/p>
 &lt;h2 id="what-is-new-in-generics">What is new in generics?&lt;/h2>
