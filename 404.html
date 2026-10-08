@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found · Violet Tran</title>
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#f5f6fa">
+  <meta name="theme-color" content="#fbfaf7">
   <script>
     // Runs before first paint so the stored theme never flashes; light unless the visitor chose dark.
     (function () {
@@ -14,7 +14,7 @@
       var d = document.documentElement;
       d.setAttribute("data-theme", t);
       d.classList.add("js");
-      if (t === "dark") document.querySelector('meta[name="theme-color"]').setAttribute("content", "#070b16");
+      if (t === "dark") document.querySelector('meta[name="theme-color"]').setAttribute("content", "#0e1116");
     })();
   </script>
   <script>
@@ -28,14 +28,14 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="/style.css">
   <style>
-    .nf { min-height: 100vh; display: grid; place-content: center; justify-items: start; gap: 18px; padding: 48px var(--gutter); position: relative; z-index: 1; }
-    .nf-code { font: 500 14px/1 var(--f-mono); color: var(--cyan); letter-spacing: 0.08em; }
-    .nf h1 { font: 700 clamp(36px, 7vw, 64px)/1.1 var(--f-display); }
+    .nf { min-height: 100vh; display: grid; place-content: center; justify-items: start; gap: 14px; padding: 48px var(--gutter); }
+    .nf-code { font: 500 14px/1 var(--f-mono); color: var(--accent); letter-spacing: 0.08em; }
+    .nf h1 { font-size: clamp(32px, 6vw, 48px); }
     .nf p { color: var(--text-dim); max-width: 46ch; }
-    .nf .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+    .nf .cta-row { margin-top: 8px; }
     .nf-theme { position: fixed; top: 16px; right: var(--gutter); z-index: 2; }
   </style>
 </head>
@@ -44,8 +44,6 @@
     <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></symbol>
   </svg>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="glow on" aria-hidden="true"></div>
   <button class="theme-btn nf-theme" type="button" data-theme-toggle aria-label="Dark theme" aria-pressed="false" title="Toggle dark theme">
     <svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
     <svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
