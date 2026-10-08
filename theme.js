@@ -5,7 +5,7 @@
 
   const root = document.documentElement;
   const meta = document.querySelector('meta[name="theme-color"]');
-  const BAR_COLOR = { light: "#f5f6fa", dark: "#070b16" };
+  const BAR_COLOR = { light: "#fbfaf7", dark: "#0e1116" };
   const buttons = document.querySelectorAll("[data-theme-toggle]");
 
   const current = () => (root.getAttribute("data-theme") === "dark" ? "dark" : "light");

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trần Nhật Anh (Violet Tran) · Senior Backend Engineer</title>
   <meta name="description" content="Trần Nhật Anh (Violet Tran) — backend engineer, ~7 years in software development, now specialized in product AI: MCP servers, agent workflows, and measuring what they produce.">
-  <meta name="theme-color" content="#f5f6fa">
+  <meta name="theme-color" content="#fbfaf7">
   <script>
     // Runs before first paint so the stored theme never flashes; light unless the visitor chose dark.
     (function () {
@@ -14,22 +14,21 @@
       var d = document.documentElement;
       d.setAttribute("data-theme", t);
       d.classList.add("js");
-      if (t === "dark") document.querySelector('meta[name="theme-color"]').setAttribute("content", "#070b16");
+      if (t === "dark") document.querySelector('meta[name="theme-color"]').setAttribute("content", "#0e1116");
     })();
   </script>
   <meta property="og:title" content="Trần Nhật Anh (Violet Tran) · Senior Backend Engineer">
   <meta property="og:description" content="Golang backends and product AI — MCP servers, agent workflows, and measuring what they produce.">
   <meta property="og:type" content="website">
+  <link rel="alternate" type="application/rss+xml" title="The Writer At Heart" href="/blog/index.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Icon sprite: referenced with <use> so each icon's path lives in one place. -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></symbol>
-    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></symbol>
     <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
     <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
@@ -37,322 +36,205 @@
     <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></symbol>
-    <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
   </svg>
-
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="glow" aria-hidden="true"></div>
 
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="bar" id="bar">
-    <a class="logo" href="#top" aria-label="Back to top">
-      <span class="logo-mark">VT</span>
-      <span class="logo-text">Violet Tran</span>
-    </a>
-    <nav class="menu" id="menu" aria-label="Main">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="btn btn-sm btn-solid bar-cta" href="resume.pdf" target="_blank" rel="noopener">
-      <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>Resume
-    </a>
-    <button class="theme-btn" type="button" data-theme-toggle aria-label="Dark theme" aria-pressed="false" title="Toggle dark theme">
-      <svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
-      <svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
-    </button>
-    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-controls="menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="bar-in">
+      <a class="logo" href="#top">Violet Tran</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#open-source">Open source</a>
+        <a href="/blog/">Writing</a>
+        <a href="#experience">Experience</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
+      <button class="theme-btn" type="button" data-theme-toggle aria-label="Dark theme" aria-pressed="false" title="Toggle dark theme">
+        <svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+    </div>
   </header>
 
-  <main id="main">
-    <!-- Hero -->
+  <main id="main" class="wrap">
     <section class="hero" id="top">
-      <div class="hero-wrap">
-        <p class="status fade-up">
-          <span class="beacon" aria-hidden="true"></span>
-          Open to senior / staff individual-contributor roles · Hanoi or remote
-        </p>
-
-        <h1 class="hero-h fade-up">
-          Backend Engineer,<br class="wide-only">
-          now specialized in <span class="hl-alt">product&nbsp;AI</span>.
-        </h1>
-
-        <p class="hero-lede fade-up">
-          ~7 years in software development. Today I work on MCP servers, agent workflows, and measuring what they produce.
-          <span class="tech-line">Golang · gRPC · GraphQL · PostgreSQL · AWS · MCP · Claude Code</span>
-        </p>
-
-        <div class="cta-row fade-up">
-          <a class="btn btn-solid" href="resume.pdf" target="_blank" rel="noopener">
-            <svg class="ico" aria-hidden="true"><use href="#i-file"/></svg>Resume
-          </a>
-          <a class="btn btn-line" href="https://github.com/japananh" target="_blank" rel="noopener">
-            <svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>GitHub
-          </a>
-          <a class="btn btn-line" href="https://linkedin.com/in/japananh" target="_blank" rel="noopener">
-            <svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn
-          </a>
-        </div>
-
-        <dl class="figures fade-up">
-          <div class="figure">
-            <dt><span class="num" data-to="7" data-prefix="~">~7</span></dt>
-            <dd>years in software development</dd>
-          </div>
-          <div class="figure">
-            <dt><span class="num" data-to="43" data-suffix="%">43%</span></dt>
-            <dd>page-generation runtime cut</dd>
-          </div>
-          <div class="figure">
-            <dt><span class="num" data-from="14" data-to="1" data-suffix="%">1%</span></dt>
-            <dd>content loss, down from 14%</dd>
-          </div>
-          <div class="figure">
-            <dt><span class="num" data-to="2">2</span></dt>
-            <dd>open-source projects</dd>
-          </div>
-        </dl>
-      </div>
-
-      <a class="down" href="#about" aria-label="Scroll to About">
-        <svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg>
-      </a>
-    </section>
-
-    <!-- About -->
-    <section class="block" id="about">
-      <header class="block-head fade-up">
-        <span class="block-idx">01</span>
-        <h2>About</h2>
-      </header>
-      <div class="about">
-        <div class="panel fade-up">
-          <p>
-            I'm a backend engineer with <strong>~7 years in software development</strong>, now specialized in
-            <strong>product AI</strong> — MCP servers, agent workflows, and measuring what they produce.
-          </p>
-          <p>
-            At GemCommerce I benchmarked candidate models on runtime, token cost and accuracy, then built the
-            <strong>MCP layer</strong> and output-scoring loop that let AI agents run GemPages page generation and
-            product research end to end.
-          </p>
-          <p>
-            I'm looking for a senior/staff <strong>individual-contributor</strong> role, not a management track.
-          </p>
-        </div>
-        <div class="panel shell fade-up" aria-label="Quick facts">
-          <div class="shell-top">
-            <i></i><i></i><i></i>
-            <span>~/violet</span>
-          </div>
-          <pre><code><b>$</b> whoami
-Senior Backend Engineer
-<b>$</b> cat focus.txt
-MCP servers · agent workflows · evaluation
-<b>$</b> echo $LOCATION
-Hanoi, Vietnam
-<b>$</b> cat looking-for.txt
-senior/staff IC role, not a management track
-<b>$</b> <span class="caret"></span></code></pre>
-        </div>
+      <p class="status">
+        <span class="beacon" aria-hidden="true"></span>
+        Open to senior / staff individual-contributor roles · Hanoi or remote
+      </p>
+      <h1>Trần Nhật Anh <span class="dim">(Violet Tran)</span></h1>
+      <p class="role">Senior Backend Engineer, now specialized in <span class="accent">product AI</span>.</p>
+      <p class="lede">
+        ~7 years in software development. Today I work on MCP servers, agent workflows, and measuring what they produce.
+      </p>
+      <p class="mono tech">Golang · gRPC · GraphQL · PostgreSQL · AWS · MCP · Claude Code</p>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="resume.pdf" target="_blank" rel="noopener">
+          <svg class="ico" aria-hidden="true"><use href="#i-file"/></svg>Resume
+        </a>
+        <a class="btn btn-line" href="mailto:japananh@gmail.com">
+          <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>Email
+        </a>
+        <a class="icon-link" href="https://github.com/japananh" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>
+        </a>
+        <a class="icon-link" href="https://linkedin.com/in/japananh" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>
+        </a>
       </div>
     </section>
 
-    <!-- Experience -->
-    <section class="block" id="experience">
-      <header class="block-head fade-up">
-        <span class="block-idx">02</span>
-        <h2>Experience</h2>
-      </header>
+    <section class="sec" id="work" aria-labelledby="work-h">
+      <h2 id="work-h" class="sec-h"><span class="idx">01</span>Selected work</h2>
 
-      <ol class="track">
-        <li class="job panel fade-up">
-          <div class="job-top">
+      <article class="case reveal">
+        <p class="meta mono">GemCommerce · 2023 – present</p>
+        <h3>MCP layer for AI page generation and product research</h3>
+        <p>
+          Benchmarked candidate models on runtime, token cost and accuracy, then built the
+          <strong>MCP layer</strong> and output-scoring loop that let AI agents run GemPages page generation and
+          product research end to end.
+        </p>
+        <p class="mono tags">Golang · MCP · model benchmarking · agent evaluation</p>
+      </article>
+
+      <article class="case reveal">
+        <p class="meta mono">GemCommerce · 2023 – present</p>
+        <h3>Page-generation pipeline</h3>
+        <ul class="outcomes mono" aria-label="Outcomes">
+          <li>−43% runtime</li>
+          <li>content loss 14% → 1%</li>
+        </ul>
+        <p>
+          Re-orchestrated the page-generation pipeline to split work once and build sections in parallel, which cut
+          runtime by <strong>43%</strong>, halved conversion cost and <strong>reduced content loss from 14% to 1%</strong>
+          on a fixed test set.
+        </p>
+      </article>
+
+      <article class="case reveal">
+        <p class="meta mono">Savvycom Software · 2022 – 2023</p>
+        <h3>DynamoDB → PostgreSQL migration</h3>
+        <ul class="outcomes mono" aria-label="Outcomes">
+          <li>timeouts → milliseconds</li>
+        </ul>
+        <p>
+          Migrated <strong>millions of records from DynamoDB to PostgreSQL time-series</strong> tables in a
+          user-tracking product, taking the main queries <strong>from timing out to milliseconds</strong>.
+        </p>
+      </article>
+    </section>
+
+    <section class="sec" id="open-source" aria-labelledby="oss-h">
+      <h2 id="oss-h" class="sec-h"><span class="idx">02</span>Open source</h2>
+
+      <article class="proj reveal">
+        <h3><a href="https://github.com/japananh/aimonitor" target="_blank" rel="noopener">aimonitor<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3>
+        <p>
+          macOS menu-bar app and CLI that monitors multi-account AI coding usage, bundled with an
+          <strong>MCP server</strong> exposing Slack, ClickUp and Sentry to AI agents. Ships with CI, release
+          automation and in-place self-update; released continuously since 2026.
+        </p>
+        <p class="mono tags">Golang · MCP server · macOS · CLI</p>
+      </article>
+
+      <article class="proj reveal">
+        <h3><a href="https://github.com/japananh/sshoal" target="_blank" rel="noopener">sshoal<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></h3>
+        <p>
+          SSH-tunnel supervisor with auto-reconnect and health checking (macOS, Linux).
+          <strong>Built agent-assisted in Rust</strong>: I specified the architecture — a transport boundary that
+          keeps the core headless-testable on a simulated clock — and reviewed the implementation. Runs a
+          <strong>guarded auto-fix bot</strong> in CI: issues from the maintainer get an automated fix, anyone
+          else gets read-only triage.
+        </p>
+        <p class="mono tags">Rust · agent-assisted · CI bot</p>
+      </article>
+    </section>
+
+    <section class="sec" id="writing" aria-labelledby="writing-h">
+      <div class="sec-top">
+        <h2 id="writing-h" class="sec-h"><span class="idx">03</span>Writing</h2>
+        <a class="more" href="/blog/">All posts<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <!-- Baked-in copy of the latest posts so the list works without JS; main.js refreshes it from /blog/index.xml. -->
+      <ol class="posts reveal" id="posts">
+        <li><time class="mono" datetime="2023-08-31">31 Aug 2023</time><a href="/blog/p/thuong-than/">Thương thân</a></li>
+        <li><time class="mono" datetime="2023-04-04">04 Apr 2023</time><a href="/blog/p/trat-nhip/">Trật nhịp</a></li>
+        <li><time class="mono" datetime="2023-02-24">24 Feb 2023</time><a href="/blog/p/sau-rieng/">Sầu riêng</a></li>
+        <li><time class="mono" datetime="2022-12-31">31 Dec 2022</time><a href="/blog/p/cu-giao-lai-moi-tiep-lay/">Cũ giao lại, mới tiếp lấy</a></li>
+        <li><time class="mono" datetime="2022-11-25">25 Nov 2022</time><a href="/blog/p/the-road-to-vpf-2022/">The Road To VPF 2022</a></li>
+      </ol>
+    </section>
+
+    <section class="sec" id="experience" aria-labelledby="exp-h">
+      <div class="sec-top">
+        <h2 id="exp-h" class="sec-h"><span class="idx">04</span>Experience</h2>
+        <a class="more" href="resume.pdf" target="_blank" rel="noopener">Full resume<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <ol class="jobs">
+        <li class="job reveal">
+          <span class="when mono">Oct 2023 – Present</span>
+          <div>
             <h3>Senior Backend Engineer <span class="at">· GemCommerce</span></h3>
-            <span class="when">Oct 2023 – Present</span>
+            <p>GemPages — Shopify conversion rate optimization platform, microservices.</p>
+            <p class="mono tags">Golang · gRPC · GraphQL · PostgreSQL · AWS</p>
           </div>
-          <p class="job-where">Hanoi, Vietnam · GemPages — Shopify conversion rate optimization platform, microservices</p>
-          <ul class="chips"><li>Golang</li><li>gRPC</li><li>GraphQL</li><li>PostgreSQL</li><li>AWS</li></ul>
-          <ul class="points">
-            <li>Benchmarked candidate models on runtime, token cost and accuracy, then built the <strong>MCP layer</strong> and output-scoring loop that let AI agents run GemPages page generation and product research end to end.</li>
-            <li>Re-orchestrated the page-generation pipeline to split work once and build sections in parallel, which cut runtime by <strong>43%</strong>, halved conversion cost and <strong>reduced content loss from 14% to 1%</strong> on a fixed test set.</li>
-            <li>Ran internal engineering sessions on working effectively with AI.</li>
-          </ul>
         </li>
-
-        <li class="job panel fade-up">
-          <div class="job-top">
+        <li class="job reveal">
+          <span class="when mono">Jun 2023 – Oct 2023</span>
+          <div>
             <h3>Backend Engineer <span class="at">· 200Lab Education</span></h3>
-            <span class="when">Jun 2023 – Oct 2023</span>
+            <p>Built features for the learning platform and the hands-on projects inside each course, following clean architecture.</p>
+            <p class="mono tags">Golang (Gin, Gorm) · PostgreSQL · Kafka · Redis · Docker</p>
           </div>
-          <p class="job-where">Ho Chi Minh City, Vietnam (Remote)</p>
-          <ul class="chips"><li>Golang (Gin, Gorm)</li><li>PostgreSQL</li><li>Kafka</li><li>Redis</li><li>Docker</li></ul>
-          <ul class="points">
-            <li>Built features for the learning platform and the hands-on projects inside each course, following clean architecture.</li>
-            <li>Wrote <strong>published technical articles</strong> on Kafka, RabbitMQ and LLM APIs, and reviewed other authors' articles for technical accuracy on the company engineering blog.</li>
-          </ul>
         </li>
-
-        <li class="job panel fade-up">
-          <div class="job-top">
+        <li class="job reveal">
+          <span class="when mono">Jun 2022 – May 2023</span>
+          <div>
             <h3>Backend Engineer <span class="at">· Savvycom Software</span></h3>
-            <span class="when">Jun 2022 – May 2023</span>
+            <p>Designed and delivered cloud services on AWS across three products — payments, user tracking and authentication.</p>
+            <p class="mono tags">Golang (Gin, Gorm, Go-zero) · PostgreSQL · gRPC · AWS · Redis · Jenkins</p>
           </div>
-          <p class="job-where">Hanoi, Vietnam</p>
-          <ul class="chips"><li>Golang (Gin, Gorm, Go-zero)</li><li>PostgreSQL</li><li>gRPC</li><li>AWS</li><li>Redis</li><li>Jenkins</li></ul>
-          <ul class="points">
-            <li>Migrated <strong>millions of records from DynamoDB to PostgreSQL time-series</strong> tables in a user-tracking product, taking the main queries <strong>from timing out to milliseconds</strong>.</li>
-            <li>Built APIs and unit tests for a payment service integrating <strong>Stripe and PayPal</strong> gateways.</li>
-            <li>Designed and delivered cloud services on AWS across three products — payments, user tracking and authentication.</li>
-            <li>Mentored <strong>5+ new joiners</strong> onto the codebase and team practices.</li>
-          </ul>
         </li>
-
-        <li class="job panel fade-up">
-          <div class="job-top">
+        <li class="job reveal">
+          <span class="when mono">Apr 2021 – Jan 2022</span>
+          <div>
             <h3>Software Engineer <span class="at">· Azoom Vietnam</span></h3>
-            <span class="when">Apr 2021 – Jan 2022</span>
+            <p>Built REST APIs for the company ERP platform on Node.js and MySQL.</p>
+            <p class="mono tags">Node.js · Vue.js · MySQL · Google Cloud (GCP) · Docker</p>
           </div>
-          <p class="job-where">Hanoi, Vietnam · Japanese ERP platform</p>
-          <ul class="chips"><li>Node.js</li><li>Vue.js</li><li>MySQL</li><li>Google Cloud (GCP)</li><li>Docker</li></ul>
-          <ul class="points">
-            <li>Built REST APIs for the company ERP platform on Node.js and MySQL.</li>
-            <li>Implemented front-end forms and UI components in Vue.js, cutting user-reported UI issues by <strong>25%</strong>.</li>
-            <li>Onboarded and mentored new hires and interns, raising their first-month output by <strong>30%</strong>.</li>
-          </ul>
         </li>
-
-        <li class="job panel fade-up">
-          <div class="job-top">
+        <li class="job reveal">
+          <span class="when mono">Sep 2019 – Nov 2020</span>
+          <div>
             <h3>Software Engineer <span class="at">· Seta International Vietnam</span></h3>
-            <span class="when">Sep 2019 – Nov 2020</span>
+            <p>BlueEye — AI training-data platform. Built a data-labeling tool from scratch on HTML Canvas and React.</p>
+            <p class="mono tags">React · Node.js · PostgreSQL · MongoDB · AWS · Jenkins</p>
           </div>
-          <p class="job-where">Hanoi, Vietnam · BlueEye — AI training-data platform</p>
-          <ul class="chips"><li>React</li><li>Node.js</li><li>PostgreSQL</li><li>MongoDB</li><li>AWS</li><li>Jenkins</li></ul>
-          <ul class="points">
-            <li>Built a <strong>data-labeling tool from scratch</strong> on HTML Canvas and React, plus a real-time chat tool on socket.io — improving the quality of training data for the company's machine-learning models.</li>
-            <li>Replaced a 7-year-old PHP timesheet server, incompatible with new facial-recognition hardware, with a Node.js service: <strong>50% less code</strong> and <strong>35% faster</strong> delivery of new features.</li>
-            <li>Published the project's API foundation as open source: <a href="https://github.com/japananh/node-express-postgres-boilerplate" target="_blank" rel="noopener">node-express-postgres-boilerplate</a>.</li>
-          </ul>
         </li>
       </ol>
     </section>
 
-    <!-- Projects -->
-    <section class="block" id="projects">
-      <header class="block-head fade-up">
-        <span class="block-idx">03</span>
-        <h2>Open-Source</h2>
-      </header>
-
-      <div class="grid-projects">
-        <article class="proj panel proj-lead fade-up" data-spot>
-          <div class="proj-top">
-            <h3>aimonitor</h3>
-            <a class="proj-link" href="https://github.com/japananh/aimonitor" target="_blank" rel="noopener" aria-label="aimonitor on GitHub">
-              <svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>
-            </a>
-          </div>
-          <p>
-            macOS menu-bar app and CLI that monitors multi-account AI coding usage, bundled with an
-            <strong>MCP server</strong> exposing Slack, ClickUp and Sentry to AI agents. Ships with CI, release
-            automation and in-place self-update; released continuously since 2026.
-          </p>
-          <ul class="chips"><li>Golang</li><li>MCP server</li><li>macOS</li><li>CLI</li></ul>
-          <a class="proj-more" href="https://github.com/japananh/aimonitor" target="_blank" rel="noopener">View on GitHub <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </article>
-
-        <article class="proj panel fade-up" data-spot>
-          <div class="proj-top">
-            <h3>sshoal</h3>
-            <a class="proj-link" href="https://github.com/japananh/sshoal" target="_blank" rel="noopener" aria-label="sshoal on GitHub">
-              <svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>
-            </a>
-          </div>
-          <p>
-            SSH-tunnel supervisor with auto-reconnect and health checking (macOS, Linux).
-            <strong>Built agent-assisted in Rust</strong>: I specified the architecture — a transport boundary that
-            keeps the core headless-testable on a simulated clock — and reviewed the implementation. Runs a
-            <strong>guarded auto-fix bot</strong> in CI: issues from the maintainer get an automated fix, anyone
-            else gets read-only triage.
-          </p>
-          <ul class="chips"><li>Rust</li><li>Agent-assisted</li><li>CI bot</li></ul>
-          <a class="proj-more" href="https://github.com/japananh/sshoal" target="_blank" rel="noopener">View on GitHub <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </article>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="block" id="skills">
-      <header class="block-head fade-up">
-        <span class="block-idx">04</span>
-        <h2>Skills</h2>
-      </header>
-
-      <div class="grid-skills">
-        <div class="panel skillset fade-up">
-          <h3><span class="swatch s-cyan" aria-hidden="true"></span>Languages</h3>
-          <ul class="chips muted"><li>Golang</li><li>SQL</li><li>TypeScript / JavaScript</li></ul>
-        </div>
-        <div class="panel skillset fade-up">
-          <h3><span class="swatch s-violet" aria-hidden="true"></span>AI engineering</h3>
-          <ul class="chips muted"><li>MCP server development</li><li>Custom agent skills and hooks</li><li>Agent orchestration</li><li>Agent evaluation &amp; feedback loops</li><li>Model benchmarking (runtime, token cost, accuracy)</li><li>Prompt engineering</li><li>LLM application development (Anthropic, OpenAI models)</li><li>AI-assisted development (Claude Code)</li></ul>
-        </div>
-        <div class="panel skillset span-2 fade-up">
-          <h3><span class="swatch s-amber" aria-hidden="true"></span>Technologies</h3>
-          <ul class="chips muted"><li>PostgreSQL</li><li>Redis</li><li>gRPC &amp; Protocol Buffers</li><li>GraphQL</li><li>REST</li><li>AWS (ECS, RDS, S3, CloudFormation)</li><li>Terraform</li><li>Docker</li><li>CI/CD (CodeBuild, GitHub Actions)</li><li>Sentry</li><li>Node.js</li></ul>
-        </div>
-        <div class="panel skillset span-2 fade-up">
-          <h3><span class="swatch s-pink" aria-hidden="true"></span>Other</h3>
-          <ul class="chips muted"><li>System design</li><li>API design</li><li>Microservices</li><li>Event-driven architecture</li><li>Clean architecture</li><li>Design docs / ADRs</li><li>Code review</li><li>Test-driven development (TDD)</li><li>Unit and integration testing</li><li>Technical mentoring</li><li>Agile / Scrum</li></ul>
-        </div>
-        <div class="panel skillset span-2 fade-up">
-          <h3><span class="swatch s-green" aria-hidden="true"></span>Certifications</h3>
-          <ul class="certs">
-            <li><strong>FreeCodeCamp</strong> — <a href="https://www.freecodecamp.org/certification/japananh/full-stack" target="_blank" rel="noopener">Legacy Full Stack Certification</a> (2021)</li>
-            <li><strong>CS50</strong> — Introduction to Computer Science (Harvard/edX)</li>
-            <li><strong>HackerRank</strong> — <a href="https://www.hackerrank.com/japananh" target="_blank" rel="noopener">hackerrank.com/japananh</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="block" id="contact">
-      <div class="panel reach fade-up">
-        <span class="block-idx">05</span>
-        <h2 class="reach-h">Looking for a <span class="hl">senior IC</span> on your backend or AI team?</h2>
-        <p class="reach-lede">
-          I'm open to senior/staff individual-contributor roles, based in Hanoi or remote.
-          The quickest way to reach me is email.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-solid" href="mailto:japananh@gmail.com">
-            <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>japananh@gmail.com
-          </a>
-          <a class="btn btn-line" href="resume.pdf" target="_blank" rel="noopener">
-            <svg class="ico" aria-hidden="true"><use href="#i-file"/></svg>Resume
-          </a>
-        </div>
-        <ul class="reach-links">
-          <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Hanoi, Vietnam</li>
-          <li><a href="https://linkedin.com/in/japananh" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>linkedin.com/in/japananh</a></li>
-          <li><a href="https://github.com/japananh" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>github.com/japananh</a></li>
-        </ul>
-      </div>
+    <section class="sec contact" id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h" class="sec-h"><span class="idx">05</span>Contact</h2>
+      <p class="contact-h">Looking for a <span class="accent">senior IC</span> on your backend or AI team?</p>
+      <p>
+        I'm open to senior/staff individual-contributor roles, based in Hanoi or remote.
+        The quickest way to reach me is email.
+      </p>
+      <ul class="links">
+        <li><a href="mailto:japananh@gmail.com"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>japananh@gmail.com</a></li>
+        <li><a href="https://linkedin.com/in/japananh" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>linkedin.com/in/japananh</a></li>
+        <li><a href="https://github.com/japananh" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-github"/></svg>github.com/japananh</a></li>
+        <li><span><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>Hanoi, Vietnam</span></li>
+      </ul>
     </section>
   </main>
 
-  <footer class="foot">
+  <footer class="foot wrap">
     <span>© <span id="yr">2026</span> Trần Nhật Anh (Violet Tran)</span>
-    <span class="foot-mono">Plain HTML, CSS and a WebGL shader. No frameworks.</span>
+    <span class="mono">Plain HTML and CSS. No frameworks.</span>
   </footer>
 
   <script src="theme.js"></script>
