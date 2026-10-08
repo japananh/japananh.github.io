@@ -5,7 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found · Violet Tran</title>
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#070b16">
+  <meta name="theme-color" content="#f5f6fa">
+  <script>
+    // Runs before first paint so the stored theme never flashes; light unless the visitor chose dark.
+    (function () {
+      var t = "light";
+      try { if (localStorage.getItem("theme") === "dark") t = "dark"; } catch (e) {}
+      var d = document.documentElement;
+      d.setAttribute("data-theme", t);
+      d.classList.add("js");
+      if (t === "dark") document.querySelector('meta[name="theme-color"]').setAttribute("content", "#070b16");
+    })();
+  </script>
   <script>
     // Old Hugo blog lived at the site root; forward those URLs to /blog.
     (function () {
@@ -25,11 +36,20 @@
     .nf h1 { font: 700 clamp(36px, 7vw, 64px)/1.1 var(--f-display); }
     .nf p { color: var(--text-dim); max-width: 46ch; }
     .nf .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+    .nf-theme { position: fixed; top: 16px; right: var(--gutter); z-index: 2; }
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></symbol>
+  </svg>
   <div class="grain" aria-hidden="true"></div>
   <div class="glow on" aria-hidden="true"></div>
+  <button class="theme-btn nf-theme" type="button" data-theme-toggle aria-label="Dark theme" aria-pressed="false" title="Toggle dark theme">
+    <svg class="ico i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+    <svg class="ico i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+  </button>
   <main class="nf">
     <span class="nf-code">404</span>
     <h1>Page not found</h1>
@@ -39,5 +59,6 @@
       <a class="btn btn-line" href="/blog/">Blog</a>
     </div>
   </main>
+  <script src="/theme.js"></script>
 </body>
 </html>
