@@ -593,6 +593,8 @@ strong { color: var(--text); font-weight: 600; }
   font-weight: 600;
 }
 .at { color: var(--text-dim); font-weight: 500; }
+.at a { color: inherit; text-decoration: none; }
+.at a:hover { color: var(--violet); text-decoration: underline; }
 .when { color: var(--cyan); font-family: var(--f-mono); font-size: 13px; white-space: nowrap; }
 .job-where { margin: 4px 0 14px; color: var(--text-dim); font-size: 14px; }
 .job .chips { margin-bottom: 16px; }
