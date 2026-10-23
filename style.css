@@ -638,7 +638,6 @@ strong { color: var(--text); font-weight: 600; }
   overflow: hidden;
 }
 .proj-lead {
-  grid-column: span 2;
   background:
     radial-gradient(640px 280px at 90% -25%, var(--violet-soft), transparent 60%),
     var(--glass);
@@ -686,6 +685,7 @@ strong { color: var(--text); font-weight: 600; }
   align-items: center;
   gap: 6px;
   align-self: flex-start;
+  margin-top: auto;
   color: var(--violet);
   font-size: 14.5px;
   font-weight: 600;
