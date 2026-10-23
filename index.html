@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trần Nhật Anh (Violet Tran) · Senior Backend Engineer</title>
-  <meta name="description" content="Trần Nhật Anh (Violet Tran) — backend engineer, ~7 years in software development, now specialized in product AI: MCP servers, agent workflows, and measuring what they produce.">
+  <meta name="description" content="Trần Nhật Anh (Violet Tran) — backend engineer, 7+ years in software development, now specialized in product AI: MCP servers, agent workflows, and measuring what they produce.">
   <meta name="theme-color" content="#f5f6fa">
   <script>
     // Runs before first paint so the stored theme never flashes; light unless the visitor chose dark.
@@ -86,7 +86,7 @@
         </h1>
 
         <p class="hero-lede fade-up">
-          ~7 years in software development. Today I work on MCP servers, agent workflows, and measuring what they produce.
+          7+ years in software development. Today I work on MCP servers, agent workflows, and measuring what they produce.
           <span class="tech-line">Golang · gRPC · GraphQL · PostgreSQL · AWS · MCP · Claude Code</span>
         </p>
 
@@ -104,16 +104,16 @@
 
         <dl class="figures fade-up">
           <div class="figure">
-            <dt><span class="num" data-to="7" data-prefix="~">~7</span></dt>
+            <dt><span class="num" data-to="7" data-suffix="+">7+</span></dt>
             <dd>years in software development</dd>
           </div>
           <div class="figure">
-            <dt><span class="num" data-to="43" data-suffix="%">43%</span></dt>
-            <dd>page-generation runtime cut</dd>
+            <dt><span class="num" data-to="61" data-suffix="%">61%</span></dt>
+            <dd>lower cost per AI-converted page</dd>
           </div>
           <div class="figure">
-            <dt><span class="num" data-from="14" data-to="1" data-suffix="%">1%</span></dt>
-            <dd>content loss, down from 14%</dd>
+            <dt><span class="num" data-to="82" data-suffix="%">82%</span></dt>
+            <dd>positive merchant ratings on AI-built pages</dd>
           </div>
           <div class="figure">
             <dt><span class="num" data-to="2">2</span></dt>
@@ -136,13 +136,12 @@
       <div class="about">
         <div class="panel fade-up">
           <p>
-            I'm a backend engineer with <strong>~7 years in software development</strong>, now specialized in
+            I'm a backend engineer with <strong>7+ years in software development</strong>, now specialized in
             <strong>product AI</strong> — MCP servers, agent workflows, and measuring what they produce.
           </p>
           <p>
-            At GemCommerce I benchmarked candidate models on runtime, token cost and accuracy, then built the
-            <strong>MCP layer</strong> and output-scoring loop that let AI agents run GemPages page generation and
-            product research end to end.
+            At GemCommerce I built the <strong>MCP layer</strong> that connects AI assistants to GemPages, so
+            merchants can clone a page, generate a landing page or research a product just by chatting.
           </p>
           <p>
             I'm looking for a senior/staff <strong>individual-contributor</strong> role, not a management track.
@@ -182,9 +181,11 @@ senior/staff IC role, not a management track
           <p class="job-where">Hanoi, Vietnam · GemPages — Shopify conversion rate optimization platform, microservices</p>
           <ul class="chips"><li>Golang</li><li>gRPC</li><li>GraphQL</li><li>PostgreSQL</li><li>AWS</li></ul>
           <ul class="points">
-            <li>Benchmarked candidate models on runtime, token cost and accuracy, then built the <strong>MCP layer</strong> and output-scoring loop that let AI agents run GemPages page generation and product research end to end.</li>
-            <li>Re-orchestrated the page-generation pipeline to split work once and build sections in parallel, which cut runtime by <strong>43%</strong>, halved conversion cost and <strong>reduced content loss from 14% to 1%</strong> on a fixed test set.</li>
-            <li>Ran internal engineering sessions on working effectively with AI.</li>
+            <li>Built the <strong>MCP layer</strong> that connects AI assistants to GemPages, so merchants can clone a page, generate a landing page or research a product just by chatting.</li>
+            <li>Redesigned how the page-conversion pipeline schedules work: it now splits a page once and builds its sections in parallel instead of in one long sequential run, which <strong>cut cost per converted page by 61%</strong>.</li>
+            <li>Built an evaluation harness that scores every generated page against fixed quality criteria and catches silent content loss, then used it to benchmark models on speed, cost and accuracy and pick the right model for each flow.</li>
+            <li>Added an in-product rating step at the end of each AI flow; <strong>82% of merchant ratings are positive</strong>.</li>
+            <li>Led internal workshops that helped engineers adopt AI coding agents in their daily work.</li>
           </ul>
         </li>
 
