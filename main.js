@@ -209,7 +209,8 @@ void main() {
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
     links.forEach((a) => {
-      const sec = document.querySelector(a.hash);
+      // External links have no hash; querySelector("") throws.
+      const sec = a.hash && document.querySelector(a.hash);
       if (sec) spy.observe(sec);
     });
   }
